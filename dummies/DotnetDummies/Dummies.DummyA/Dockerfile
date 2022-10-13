@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Dummies.DummyB/Dummies.DummyB.csproj", "Dummies.DummyB/"]
-RUN dotnet restore "Dummies.DummyB/Dummies.DummyB.csproj"
+COPY ["Dummies.DummyA/Dummies.DummyA.csproj", "Dummies.DummyA/"]
+RUN dotnet restore "Dummies.DummyA/Dummies.DummyA.csproj"
 COPY . .
-WORKDIR "/src/Dummies.DummyB"
-RUN dotnet build "Dummies.DummyB.csproj" -c Release -o /app/build
+WORKDIR "/src/Dummies.DummyA"
+RUN dotnet build "Dummies.DummyA.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Dummies.DummyB.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Dummies.DummyA.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Dummies.DummyB.dll"]
+ENTRYPOINT ["dotnet", "Dummies.DummyA.dll"]
