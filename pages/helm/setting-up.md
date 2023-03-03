@@ -20,7 +20,7 @@ Selected technologies for this project
     ssh [username]@[host]
     ```
 
-### Install Docker
+## Install Docker
 
 Detailed instructions can be found in [official Docker documentation][DOCKER-INST]. <br> **TL;DR** version below.
 
@@ -44,7 +44,7 @@ Detailed instructions can be found in [official Docker documentation][DOCKER-INS
     sudo sh get-docker.sh
     ```
 
-### Install minikube
+## Install minikube
 
 1. Download minikube
 
