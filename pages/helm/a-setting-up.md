@@ -22,9 +22,13 @@ Selected technologies for this project
 
 ## Install Docker
 
-Detailed instructions can be found in [official Docker documentation][DOCKER-INST]. <br> **TL;DR** version below.
+Detailed instructions can be found in [official Docker documentation][DOCKER-INST].\
+**TL;DR** version below.
 
 1. Download Docker installation script.
+
+    <details>
+    <summary>Used curl options explained</summary>
 
     | Option | Reason |
     |--------|--------|
@@ -33,7 +37,9 @@ Detailed instructions can be found in [official Docker documentation][DOCKER-INS
     | -S, --show-error | When used with -s, --silent, it makes curl show an error message if it fails. |
     | -L, --location | (HTTP) If the server reports that the requested page has moved to a different location (indicated with a Location: header and a 3xx response code), this option will make curl redo the request on the new place. |
     | -o, --output [file] | Write output to [file] instead of stdout. |
-  
+
+    </details> 
+
     ```bash
     curl -fsSL https://get.docker.com -o get-docker.sh
     ```
@@ -48,10 +54,15 @@ Detailed instructions can be found in [official Docker documentation][DOCKER-INS
 
 1. Download minikube
 
+    <details>
+    <summary>Used curl options explained</summary>
+
     | Option | Reason |
     |--------|--------|
     | -L, --location | (HTTP) If the server reports that the requested page has moved to a different location (indicated with a Location: header and a 3xx response code), this option will make curl redo the request on the new place. |
     | -O, --remote-name | Write output to a local file named like the remote file we get. |
+
+    </details> 
 
     ```bash
     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm64
@@ -65,10 +76,15 @@ Detailed instructions can be found in [official Docker documentation][DOCKER-INS
 
 3. Add current user to docker group
 
+    <details>
+    <summary>Used usermod options explained</summary>
+
     | Option | Reason |
     |--------|--------|
     | -a, --append | Add the user to the supplementary group(s). Use only with the -G option. |
     | -G, --groups | A list of supplementary groups which the user is also a member of. |
+
+    </details> 
 
     ```bash
     sudo usermod -aG docker $USER && newgrp docker
@@ -88,7 +104,8 @@ Detailed instructions can be found in [official Docker documentation][DOCKER-INS
 
 ## Install helm
 
-Detailed instructions can be found in [official Helm documentation][HELM-INST]. <br> **TL;DR** version below.
+Detailed instructions can be found in [official Helm documentation][HELM-INST].\
+**TL;DR** version below.
 
 1. Download Helm
 
@@ -98,12 +115,17 @@ Detailed instructions can be found in [official Helm documentation][HELM-INST]. 
 
 2. Untar it
 
+    <details>
+    <summary>Used tar options explained</summary>
+
     | Option | Reason |
     |--------|--------|
     | -z, --gzip, --gunzip | This option tells tar to read or write archives through gzip, allowing tar to directly operate on several kinds of compressed archives transparently. This option should be used, for example, when operating on files with the extension .tar.gz. |
     | -x, --extract, --get | Extract files from an archive. |
     | -v, --verbose | Operate verbosely. |
     | -f, --file | Use archive file (or device) ARCHIVE. |
+
+    </details> 
 
     ```bash
     tar -zxvf helm-v3.11.1-linux-arm64.tar.gz
