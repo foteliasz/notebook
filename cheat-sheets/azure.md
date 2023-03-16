@@ -14,9 +14,11 @@ Below cheat sheet was created in following context.
 
 ---
 
-| Action                 | Command                                     |
-|------------------------|---------------------------------------------|
-| azure-cli installation | `winget install -e --id Microsoft.AzureCLI` |
+| Action                      | Command                                                 |
+|-----------------------------|---------------------------------------------------------|
+| installation                | `winget install -e --id Microsoft.AzureCLI`             |
+| list regions                | `az account list-locations -o table`                    |
+| register resource providers | `az provider register --namespace 'microsoft.insights'` |
 
 [AZ-DOCS]: https://learn.microsoft.com/en-us/cli/azure/
 [WIN-11-DOCS]: https://learn.microsoft.com/en-us/windows/whats-new/windows-11-overview
